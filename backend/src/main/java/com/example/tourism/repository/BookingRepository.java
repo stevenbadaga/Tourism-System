@@ -1,0 +1,12 @@
+package com.example.tourism.repository;
+
+import com.example.tourism.model.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface BookingRepository extends JpaRepository<Booking, Long> {
+    List<Booking> findByUserId(Long userId);
+    Optional<Booking> findByTicketNumber(String ticketNumber);
+}
