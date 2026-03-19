@@ -1,23 +1,33 @@
 # Intelligent Tourism Backend
 
-Minimal Spring Boot backend scaffold with PostgreSQL.
+This backend provides the REST API for attractions, users, preferences, bookings, reviews, itineraries, notifications, authentication, and recommendations.
 
-Run with Docker (recommended):
+## Local Run
 
-```powershell
-cd System
-docker-compose up --build
-```
-
-Or build locally with Maven:
+From the repository root:
 
 ```powershell
 cd backend
-mvn package
-java -jar target/intelligent-tourism-backend-0.0.1-SNAPSHOT.jar
+mvn -q -DskipTests package
+java -jar target\intelligent-tourism-backend-0.0.1-SNAPSHOT.jar
 ```
 
-API endpoints:
-- `GET /api/attractions` - list attractions (optional `city` query)
-- `GET /api/attractions/{id}` - get attraction
-- `POST /api/attractions` - create attraction
+The app runs on `http://localhost:8080`.
+
+## Data Setup
+
+- H2 is used by default for local development
+- Sample data is loaded on startup
+- PostgreSQL settings can be supplied for Docker or production-style runs
+
+## Main API Areas
+
+- Attractions
+- Users
+- User preferences
+- Bookings
+- Reviews
+- Itineraries
+- Recommendations
+- Notifications
+- Authentication
